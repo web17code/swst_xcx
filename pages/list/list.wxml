@@ -1,0 +1,14 @@
+<view class="listContent">
+  <view class='item'>
+    <image src="../images/text.png" class='logo'></image>
+    <view class='title'>
+      <view class='title-txt'>生物测试试卷一</view>
+      <view class='progressBlock'>
+        <view class='progressContent'>
+          <view class='progress'></view>
+        </view>
+        <view class='progress-txt'>70%</view>
+      </view>
+    </view>
+  </view>
+</view>
