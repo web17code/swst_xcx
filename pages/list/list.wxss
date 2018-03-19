@@ -2,9 +2,54 @@
 .listContent{
   display: block;
   box-sizing: border-box;
-  padding: 20rpx;
-  background: #ddd;
+  padding: 24rpx;
+  background: #0db0d2 url("http://118.25.46.132:8080/xx/index.png")  no-repeat center;
+  background-size: cover;
   min-height: 100vh;
+
+}
+.listTitle{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color:#fff;
+  margin-bottom: 26rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  position: relative;
+}
+.listTitle .textBlock{
+  position: relative;
+}
+.listTitle .border{
+  background: #fff;
+  width:8rpx;
+  height:38rpx;
+  border-radius: 4rpx;
+  margin-right:10rpx;
+}
+.listTitle .textBlock .qian{
+  position: absolute;
+  width: 22rpx;
+  height: 22rpx;
+  left: -12rpx;
+  bottom:-14rpx;
+}
+.listTitle .textBlock .hou{
+  position: absolute;
+  right: -22rpx;
+  top:-6rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+.listTitle .wenhao{
+  width:36rpx;
+  height: 36rpx;
+  position: absolute;
+  right: 0rpx;
+}
+.itemBlock{
+  margin-bottom:30rpx;
 }
 .item{
   display: flex;
@@ -13,12 +58,27 @@
   background: #fff;
   border-radius: 10rpx;
   align-items: center;
-  padding:0rpx 20rpx;
+  padding:26rpx;
+}
+.item .logoBlock{
+  width: 140rpx;
+  height: 118rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .item .logo{
-  width:46rpx;
-  height: 56rpx;
+  width:100rpx;
+  height: 110rpx;
   /* flex-grow:1; */
+}
+.item .R_border{
+  position: absolute;
+  right:0;
+  top:14rpx;
+  width:8rpx;
+  height:90rpx;
 }
 .item .title{
   display: flex;
@@ -27,8 +87,8 @@
   margin-left: 20rpx;
 }
 .item .title .title-txt{
-  font-size: 26rpx;
-  margin-bottom: 26rpx;
+  font-size: 30rpx;
+  margin-bottom: 0rpx;
 }
 .progressBlock{
   display: flex;
@@ -36,17 +96,142 @@
   align-items: center;
 }
 .item .progressContent{
-  width: 80%;
-  background: #ddd;
+  width: 294rpx;
   height: 12rpx;
+  margin-top:22rpx;
+  margin-bottom:22rpx;
+  background: #fff;
   border-radius: 6rpx;
+  border:1rpx solid #0bd0d2;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+.item .progressContent .progress{
+  position: absolute;
+  background: #0bd0d2;
+  height: 12rpx;
+  border-radius:6rpx;
+  width: 70%;
 }
 .item .progress-txt{
   font-size: 24rpx;
+  margin-left:20rpx;
 }
-.item .progressContent .progress{
-  background: #d2a;
-  height: 12rpx;
-  border-radius: 6rpx;
-  width: 70%;
+.item .progress-txt.ing{
+  color:#0bd0d2;
+}
+.item .title .finishBlock{
+  position: relative;
+  color:#15e624;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/* .item .title .finishBlock .finishLogoPic{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+} */
+.item .title .finishBlock .score{
+  font-size: 28rpx;
+  color: #ff182e;
+  /* position: absolute;
+  right: 10rpx;
+  top:-10rpx; */
+}
+.item .title .finishBlock .score text{
+  font-size: 24rpx;
+  color:#9a9a9a;
+}
+.finishBlock .finishBtn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:10rpx;
+}
+.finishBlock .finishBtn .reDo{
+  color:#39c571;
+  border:2rpx solid #39c571;
+  border-radius: 10rpx;
+  width: 128rpx;
+  height:50rpx;
+  display: block;
+  line-height:50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+.finishBlock .finishBtn .lookAnalyse{
+  color:#0ad5d7;
+  border:2rpx solid #0ad5d7;
+  border-radius: 10rpx;
+  width: 128rpx;
+  height:50rpx;
+  display: block;
+  line-height:50rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.item .title .willBlock{
+  color:#fc5353;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+}
+
+.itemBlock .bottomBorder{
+  width: 700rpx;
+  height: 6rpx;
+  display: block;
+  bottom: -4rpx;
+  left: 0;
+}
+.popupBlock{
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.popupBlock .popup{
+  position: fixed;
+  width: 550rpx;
+  background: #fff;
+  left: 100rpx;
+  right: 100rpx;
+  top:360rpx;
+  border-radius: 10rpx;
+}
+
+.popupBlock .popup .popupTitle{
+  font-size: 36rpx;
+  color:#333;
+  border-bottom:1rpx solid #d2d2d2;
+  display: block;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.popupBlock .popup .popupTxt{
+  font-size: 30rpx;
+  color: #888;
+  padding: 56rpx 40rpx 0;
+}
+.popupBlock .popup .okBtn{
+  background: #0bd0d2;
+  color: #fff;
+  font-size: 30rpx;
+  display: block;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  width: 436rpx;
+  margin:90rpx auto 58rpx;
+}
+.popupBlock .popup .okBtn:active{
+  background: #09a2a4;
 }

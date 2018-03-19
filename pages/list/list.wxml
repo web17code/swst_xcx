@@ -1,14 +1,50 @@
 <view class="listContent">
-  <view class='item'>
-    <image src="../images/text.png" class='logo'></image>
-    <view class='title'>
-      <view class='title-txt'>生物测试试卷一</view>
-      <view class='progressBlock'>
-        <view class='progressContent'>
-          <view class='progress'></view>
+  <view class='listTitle'>
+    <view class='border'></view>
+    <view class='textBlock'>
+      <image class='qian' src='../images/star2.png'></image>试卷列表
+      <image class='hou'  src='../images/star1.png'></image>
+    </view>
+    <image class='wenhao' src="../images/wenhao.png" bindtap='showPopup'></image>
+  </view>
+
+  <view class='itemBlock' bindtap='goWork' 
+    data-num='{{item.id}}' data-pagenum='{{item.pageNum}}' data-examstatus='{{item.status}}'
+    wx:for="{{listData}}" wx:for-index="index" wx:for-item="item">
+    <view class='item'>
+      <view class='logoBlock'>
+        <image src="../images/text.png" class='logo'></image>
+        <image src="../images/greyBorder.png" class='R_border'></image>
+      </view>
+      <view class='title'>
+        <view class='title-txt'>{{item.name}}</view>
+        <view class='progressBlock'  wx:if="{{item.status=='1'}}">
+          <view class='progressContent'>
+            <view class='progress'  style="width:{{item.percent}}%;"></view>
+          </view>
+          <view class='progress-txt ing'>已完成{{item.percent}}%</view>
         </view>
-        <view class='progress-txt'>70%</view>
+        <!--未开始  -->
+        <view class='willBlock'  wx:if="{{item.status=='0'}}">未开始</view>
+        <!--已完成  -->
+        <view class='finishBlock'  wx:if="{{item.status=='2'}}">
+          <text class='score'>{{item.score}}<text>分</text></text>
+          <view class='finishBtn'>
+            <view class='reDo' bindtap='reDo' data-num='{{item.id}}' data-pagenum='{{item.pageNum}}' data-examstatus='{{item.status}}'>重新测试</view>
+            <view class='lookAnalyse' bindtap='lookAnalyse' data-num='{{item.id}}' data-pagenum='{{item.pageNum}}' data-examstatus='{{item.status}}'>查看解析</view>
+          </view>
+        </view>
       </view>
     </view>
+    <image class='bottomBorder' src='../images/bottomBorder.png'></image>
+  </view>
+
+</view>
+
+<view class='popupBlock' hidden='{{!isShowPopUp}}'>
+  <view class='popup'>
+    <view class='popupTitle'>温馨提示</view>
+    <view class='popupTxt'>更多生物习题请访问享学网，做题学解析查知识点诊断报告。</view>
+    <view class='okBtn' bindtap='hidePopup'>已了解</view>
   </view>
 </view>
