@@ -1,12 +1,13 @@
 {
-  "pages":[
+  "pages": [
     "pages/list/list",
-    "pages/index/index"
+    "pages/answer/answer",
+    "pages/analyze/analyze"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "上海生物合格考",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#0BD0D2"
   }
 }

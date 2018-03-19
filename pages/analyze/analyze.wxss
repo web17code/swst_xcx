@@ -1,0 +1,136 @@
+.answerPage{
+  padding:20rpx 24rpx 0rpx 24rpx;
+  background:#fff;
+  display: block;
+  /* flex-direction: column; */
+  box-sizing: border-box;
+  background: #0db0d2 url("http://118.25.46.132:8080/xx/index.png")  no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+}
+.headerBlock{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+}
+.headerBlock .prev{
+  font-size: 28rpx;
+  color: #fff;
+  text-shadow: 2rpx 2rpx 2rpx #999;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.headerBlock .next{
+  font-size: 28rpx;
+  color: #fff;
+  text-shadow: 2rpx 2rpx 2rpx #999;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.headerBlock .timeBlock{
+  display: block;
+  position: relative;
+  width: 142rpx;
+  height: 40rpx;
+}
+.headerBlock .timeBlock .minute{
+  color: #0ad5d7;
+  font-size: 32rpx;
+  position: absolute;
+  z-index:111;
+  top:-2rpx;
+  left:10rpx; 
+  letter-spacing: 10rpx;
+}
+.headerBlock .timeBlock .second{
+  color: #0ad5d7;
+  font-size: 32rpx;
+  position: absolute;
+  z-index:111;
+  top:-2rpx;
+  left:90rpx;
+  letter-spacing: 12rpx;
+}
+.headerBlock .timeBlock .timeBg{
+  width: 142rpx;
+  height: 40rpx;
+  z-index:11;
+}
+
+.answerPage .topBorder{
+  width: 700rpx;
+  height: 20rpx;
+  display: block;
+}
+.answerPage .q-text{
+  display: block;
+  box-sizing: border-box;
+  padding: 16rpx 26rpx;
+  width: 700rpx;
+  background: #fff;
+  height: 924rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  font-size: 28rpx;
+  color:#626262;
+  line-height: 40rpx;
+}
+.answerPage .q-text .q-num{
+  color:#00adaf;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.answerPage .q-text .option{
+  margin-top:10rpx;
+}
+.answerPage .q-text .answer{
+  margin-top:20rpx;
+}
+.answerPage .q-text .analyse{
+  margin-top:20rpx;
+}
+
+
+
+
+
+.chooseBlock{
+  width: 100%;
+  color: #24AEC5;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0rpx;
+  height:120rpx;
+  align-items: center;
+}
+.chooseBlock .chooseOption{
+  flex-grow:1;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+.chooseBlock .chooseOption view{
+  display: block;
+  font-size: 28rpx;
+  line-height: 90rpx;
+  text-align: center;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background: #d2d2d2;
+  color:#626262;
+  /* border: 2rpx solid #24AEC5;
+  box-shadow: 2px 4rpx 4rpx #ddd; */
+}
+.chooseBlock .chooseOption view.choosed{
+  background: #37d8d0;
+  color: #fff;
+}
+.chooseBlock .chooseOption view.choosed.error{
+  background: #ff182e;
+}

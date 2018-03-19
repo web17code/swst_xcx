@@ -1,0 +1,45 @@
+<view class='answerPage'>
+  <!--头部、上一题、下一题、时间  -->
+  <view class='headerBlock'>
+    <view class='prev' bindtap='prev'>上一题</view>
+    <view class='timeBlock'>
+      <image class='timeBg' src='../images/timebg.png'></image>
+      <view class='minute'>{{minute_s}}</view>
+      <view class='second'>{{second_s}}</view>
+    </view>
+    <view class='next' bindtap='next'>下一题</view>
+  </view>
+  <!--题目信息区域  -->
+  <!-- <view>6、人体一旦缺乏维生素就容易患病，饮食中如果缺乏维生素C就可能得（）</view>
+   -->
+  <image src='../images/topBorder.png' class='topBorder'></image>
+  <scroll-view scroll-y="true" class='q-text'>
+    <view class='q-num' hidden='{{pageNum==null}}'>{{pageNum}}/{{total}}</view>
+    <view>
+      <rich-text nodes="{{NowData.content}}"></rich-text>
+    </view>
+    <view class='option'>
+      <view wx:for="{{NowData.options}}" wx:for-index="index" wx:for-item="item"><rich-text nodes="{{item}}"></rich-text> </view>
+    </view>
+  </scroll-view>
+  <!--选项  -->
+
+</view>
+<view class='chooseBlock'>
+  <view class='chooseOption' data-useranswer="A" bindtap='choose'>
+    <view class='{{NowData.userAnswer=="A"?"choosed":""}}'>A</view>
+  </view>
+  <view class='chooseOption' data-useranswer="B" bindtap='choose'>
+    <view class='{{NowData.userAnswer=="B"?"choosed":""}}'>B</view>
+  </view>
+  <view class='chooseOption' data-useranswer="C" bindtap='choose'>
+    <view class='{{NowData.userAnswer=="C"?"choosed":""}}'>C</view>
+  </view>
+  <view class='chooseOption' data-useranswer="D" bindtap='choose'>
+    <view class='{{NowData.userAnswer=="D"?"choosed":""}}'>D</view>
+  </view>
+  <view class=''>
+    <view class='{{NowData.userAnswer=="D"?"choosed":""}}'></view>
+  </view>
+  <view class='submitSJ' bindtap='submitSJ_check'>交卷</view>
+</view>
