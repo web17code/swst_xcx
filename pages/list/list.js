@@ -174,9 +174,35 @@ Page({
   },
   reDo:function(e){
     console.log("重做")
-    // wx.navigateTo({
-    //   url: '../analyze/analyze?shiJuanId=' + e.currentTarget.dataset.num + '&timuPageNum=' + e.currentTarget.dataset.pagenum
-    // })
+    wx.showModal({
+      title: '提示',
+      content: '您确定要重新测试？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log("kaishi+++++redo")
+          wx.request({
+            url: app.globalData.cfg.cfg.http_ip + '/userExam/redo',
+            method: "POST",
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            data: {
+              userId: getApp().globalData.userID,
+              examId: e.currentTarget.dataset.num
+            },
+            success:(res) => {
+              console.log(res)
+              console.log(res.data)
+              if (res.data.code == "0000") {
+                wx.navigateTo({
+                  url: '../answer/answer?shiJuanId=' + e.currentTarget.dataset.num + '&timuPageNum=1'
+                })
+              }
+            }
+          })
+        }
+      }
+    })
   },
   lookAnalyse:function(e){
     wx.navigateTo({
