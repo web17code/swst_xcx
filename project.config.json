@@ -39,6 +39,12 @@
 					"name": "解析",
 					"pathName": "pages/analyze/analyze",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图表",
+					"pathName": "pages/chart/chart",
+					"query": ""
 				}
 			]
 		}

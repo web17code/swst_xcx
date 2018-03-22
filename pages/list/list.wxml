@@ -28,10 +28,11 @@
         <view class='willBlock'  wx:if="{{item.status=='0'}}">未开始</view>
         <!--已完成  -->
         <view class='finishBlock'  wx:if="{{item.status=='2'}}">
-          <text class='score'>{{item.score}}<text>分</text></text>
+          <text class='score'><text>得分：</text>{{item.score}}</text>
           <view class='finishBtn'>
-            <view class='reDo' bindtap='reDo' data-num='{{item.id}}' data-pagenum='{{item.pageNum}}' data-examstatus='{{item.status}}'>重新测试</view>
+            <!-- <view class='reDo' bindtap='reDo' data-num='{{item.id}}' data-pagenum='{{item.pageNum}}' data-examstatus='{{item.status}}'>重新测试</view> -->
             <view class='lookAnalyse' bindtap='lookAnalyse' data-num='{{item.id}}' data-pagenum='{{item.pageNum}}' data-examstatus='{{item.status}}'>查看解析</view>
+            <view class='goreport' bindtap='goreport' data-num='{{item.id}}' data-pagenum='{{item.pageNum}}' data-examstatus='{{item.status}}'>分析报告</view>
           </view>
         </view>
       </view>

@@ -1,0 +1,17 @@
+<view class="chartContent">
+  <image src="../images/topBorder.png" class="topborderImg"></image>
+  <!-- 内容 -->
+  <view class="picBody">
+    <view class="pic-title">
+      <text>知识点分析图</text>
+    </view>
+    <!-- 图表容器 DOM -->
+    <view class='eccanvas'>
+      <ec-canvas wx:if="{{!isDisposed}}" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    </view> 
+    
+  </view>
+  <!-- 脚 -->
+  <view class="footerBtn" bindtap='reDo'>
+    <image src="../images/reDologo.png" class="reDologo"></image>重新测验</view>
+  </view>

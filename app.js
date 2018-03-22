@@ -25,11 +25,10 @@ App({
           success: (res) => {
             wx.hideToast();
             if (res.data.code == "0000"){//请求正确，设置userID
+              this.globalData.sessionId = res.data.data.session_key;
               this.globalData.userID = res.data.data.oid;
-              console.log("appJS")
               console.log(this.globalData)
               if (this.listCallBack){
-                
                 this.listCallBack();
               }
             }
@@ -61,6 +60,7 @@ App({
             },
             success: (res) => {
               this.globalData.userID = res.data.data.oid;
+              this.globalData.userID = res.data.data.oid;
               if (this.globalData.userID != null) {
                 wx.hideLoading();
               }
@@ -73,6 +73,8 @@ App({
   globalData: {
     userInfo: null,
     cfg: cfg,
-    userID: null
-  }
+    userID: null,
+    sessionId:null
+  },
+  //获取JSESSIONID,
 })

@@ -1,0 +1,73 @@
+
+.eccanvas {
+  width: 100%;
+  height: 50vh;
+}
+
+.chartContent{
+  display: block;
+  box-sizing: border-box;
+  background: #0bd0d2 url("http://118.25.46.132:8080/xx/index.png")  no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+
+  padding-top:20rpx;
+}
+.chartContent .topborderImg{
+  display: block;
+  width: 700rpx;
+  height:20rpx;
+  margin:0 auto;
+}
+.chartContent .picBody{
+  margin:0 auto;
+  width: 93vw;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  background: #fff;
+  height: 88vh;
+  padding-left:1.5vw;
+  padding-right: 1.5vw;
+  padding-top:40rpx;
+}
+.chartContent .picBody .pic-title{
+  font-size: 36rpx;
+  color: #333;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 100rpx;
+}
+.chartContent .picBody .pic-title:before{
+  width: 10rpx;
+  height: 40rpx;
+  display: block;
+  background: #24aec5;
+  content: "";
+  position: absolute;
+  top: 5rpx;
+  left: 10rpx;
+}
+.chartContent .picBody .chart{
+  margin:0 auto;
+}
+.chartContent .footerBtn{
+  font-size: 34rpx;
+  color:#fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #00adaf;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right:0;
+}
+.chartContent .footerBtn image{
+  margin-right: 10rpx;
+  width:35rpx;
+  height: 34rpx;
+  vertical-align:middle;
+}

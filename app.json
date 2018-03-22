@@ -2,12 +2,13 @@
   "pages": [
     "pages/list/list",
     "pages/answer/answer",
-    "pages/analyze/analyze"
+    "pages/analyze/analyze",
+    "pages/chart/chart"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#00adaf",
     "navigationBarTitleText": "上海生物合格考",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "write",
     "backgroundColor": "#0BD0D2"
   }
 }

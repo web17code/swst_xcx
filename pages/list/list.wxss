@@ -163,7 +163,7 @@
   line-height:50rpx;
   text-align: center;
   font-size: 24rpx;
-  margin-right: 20rpx;
+  margin-right: 14rpx;
 }
 .finishBlock .finishBtn .lookAnalyse{
   color:#0ad5d7;
@@ -175,6 +175,19 @@
   line-height:50rpx;
   text-align: center;
   font-size: 24rpx;
+  margin-right: 14rpx;
+}
+.finishBlock .finishBtn .goreport{
+  color:#39c571;
+  border:2rpx solid #39c571;
+  border-radius: 10rpx;
+  width: 128rpx;
+  height:50rpx;
+  display: block;
+  line-height:50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  margin-right: 14rpx;
 }
 .item .title .willBlock{
   color:#fc5353;

@@ -53,37 +53,6 @@ Page({
       this.getListData();
     }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    // //发送时间数据
-    // console.log("发送链接")
-    // wx.request({
-    //   url: 'http://118.25.46.132:8080/gjwl_sys/sysadmin/userAction_Demo',
-    //   method: "GET",
-    //   success: function (res) {
-    //     console.log(res)
-    //     console.log("0.....0" + res)
-    //   }
-    // })
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -208,7 +177,11 @@ Page({
     wx.navigateTo({
       url: '../analyze/analyze?shiJuanId=' + e.currentTarget.dataset.num + '&timuPageNum=' + e.currentTarget.dataset.pagenum
     })
+  },
+  goreport:function(e){
+    wx.navigateTo({
+      url: '../chart/chart?shiJuanId=' + e.currentTarget.dataset.num + '&userId=' + getApp().globalData.userID
+    })
   }
-
 
 })
