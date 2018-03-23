@@ -13,10 +13,10 @@
   <!-- <view>6、人体一旦缺乏维生素就容易患病，饮食中如果缺乏维生素C就可能得（）</view>
    -->
   <image src='../images/topBorder.png' class='topBorder'></image>
-  <scroll-view scroll-y="true" class='q-text'>
+  <scroll-view scroll-y="true" scroll-x="true" class='q-text'>
     <view class='q-num'  hidden='{{pageNum==null}}'>{{pageNum}}/{{total}}</view>
     <view>
-      <rich-text nodes="{{NowData.content}}"></rich-text>
+      <rich-text nodes="{{NowData.content}}" ></rich-text>
     </view>
     <view class='option'>
       <view wx:for="{{NowData.options}}" wx:for-index="index" wx:for-item="item"><rich-text nodes="{{item}}"></rich-text> </view>

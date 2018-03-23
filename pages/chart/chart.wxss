@@ -7,7 +7,7 @@
 .chartContent{
   display: block;
   box-sizing: border-box;
-  background: #0bd0d2 url("http://118.25.46.132:8080/xx/index.png")  no-repeat center;
+  background: #0bd0d2 url("http://mapp.zhunedu.com/exam/images/index.png")  no-repeat center;
   background-size: cover;
   height: 100vh;
   width: 100%;

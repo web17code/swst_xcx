@@ -17,12 +17,12 @@ function setOption(chart) {
       show: false
     },
     radar: {
-      radius: '60%',
+      radius: '55%',
       name: {
         formatter: function (params) {
           var newParamsName = "";// 最终拼接成的字符串
           var paramsNameNumber = params.length;// 实际标签的个数
-          var provideNumber = 6;// 每行能显示的字的个数
+          var provideNumber = 5;// 每行能显示的字的个数
           var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
           /**
            * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
@@ -87,10 +87,12 @@ Page({
       url: app.globalData.cfg.cfg.http_ip + '/userQuestion/score/spiderMap',
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'Cookie': getApp().globalData.Cookie
       },
       data: {
         userId: getApp().globalData.userID,
+        userKey: getApp().globalData.userID,
         examId: option.shiJuanId
       },
       success: function (res) {
@@ -147,10 +149,12 @@ Page({
             url: app.globalData.cfg.cfg.http_ip + '/userExam/redo',
             method: "POST",
             header: {
-              'content-type': 'application/x-www-form-urlencoded'
+              'content-type': 'application/x-www-form-urlencoded',
+              'Cookie': getApp().globalData.Cookie
             },
             data: {
               userId: getApp().globalData.userID,
+              userKey: getApp().globalData.userID,
               examId: that.data.examId
             },
             success: (res) => {

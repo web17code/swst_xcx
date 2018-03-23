@@ -59,13 +59,15 @@ Page({
       url: app.globalData.cfg.cfg.http_ip + '/userQuestion/analyse',
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'Cookie': getApp().globalData.Cookie
       },
       data: {
         examId: that.data.examId,
         pageSize: 1,
         pageNum: that.data.pageNum,
         userId: app.globalData.userID,
+        userKey:app.globalData.userID//token
       },
       success: function (res) {
         wx.hideLoading()

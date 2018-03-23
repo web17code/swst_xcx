@@ -116,12 +116,15 @@ Page({
       url: app.globalData.cfg.cfg.http_ip +'/exam/userExams',
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'Cookie': getApp().globalData.Cookie
       },
       data: {
         userId: getApp().globalData.userID,
+        userKey: getApp().globalData.userID,
         pageSize:10,
-        pageNum:that.data.pageNum
+        pageNum:that.data.pageNum,
+        
       },
       success: (res) => {
         wx.hideToast();
@@ -136,38 +139,6 @@ Page({
           console.log(allData)
           that.setData({
             listData: allData
-          })
-        }
-      }
-    })
-  },
-  reDo:function(e){
-    console.log("重做")
-    wx.showModal({
-      title: '提示',
-      content: '您确定要重新测试？',
-      success: function (res) {
-        if (res.confirm) {
-          console.log("kaishi+++++redo")
-          wx.request({
-            url: app.globalData.cfg.cfg.http_ip + '/userExam/redo',
-            method: "POST",
-            header: {
-              'content-type': 'application/x-www-form-urlencoded'
-            },
-            data: {
-              userId: getApp().globalData.userID,
-              examId: e.currentTarget.dataset.num
-            },
-            success:(res) => {
-              console.log(res)
-              console.log(res.data)
-              if (res.data.code == "0000") {
-                wx.navigateTo({
-                  url: '../answer/answer?shiJuanId=' + e.currentTarget.dataset.num + '&timuPageNum=1'
-                })
-              }
-            }
           })
         }
       }
