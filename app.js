@@ -14,7 +14,7 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: cfg.cfg.http_ip + '/user/getUserInfo', //仅为示例，并非真实的接口地址
+          url: cfg.cfg.http_ip + '/user/getUserInfo', 
           method: "POST",
           header: {
             'content-type': 'application/x-www-form-urlencoded' // 默认值application/json+application/x-www-form-urlencoded
@@ -25,8 +25,8 @@ App({
           success: (res) => {
             wx.hideToast();
             if (res.data.code == "0000"){//请求正确，设置userID
-              this.globalData.sessionId = res.data.data.session_key;
-              this.globalData.userID = res.data.data.oid;
+              this.globalData.Cookie = 'JSESSIONID='+res.data.data.session_key;
+              this.globalData.userID = res.data.data.user.oid;
               console.log(this.globalData)
               if (this.listCallBack){
                 this.listCallBack();
@@ -38,7 +38,7 @@ App({
     })
   },
   getOid: function () {
-    if (this.globalData.userID == null) {
+    //if (this.globalData.userID == null) {
       wx.showToast({
         title: '登录中',
         icon: "loading",
@@ -50,7 +50,7 @@ App({
         success: (res) => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           wx.request({
-            url: cfg.cfg.http_ip + '/user/getUserInfo', //仅为示例，并非真实的接口地址
+            url: cfg.cfg.http_ip + '/user/getUserInfo',
             method: "POST",
             header: {
               'content-type': 'application/x-www-form-urlencoded' // 默认值application/json+application/x-www-form-urlencoded
@@ -60,7 +60,7 @@ App({
             },
             success: (res) => {
               this.globalData.userID = res.data.data.oid;
-              this.globalData.userID = res.data.data.oid;
+              this.globalData.Cookie = 'JSESSIONID=' + res.data.data.user.session_key;
               if (this.globalData.userID != null) {
                 wx.hideLoading();
               }
@@ -68,13 +68,13 @@ App({
           })
         }
       })
-    }
+    //}
   },
   globalData: {
     userInfo: null,
     cfg: cfg,
     userID: null,
-    sessionId:null
+    Cookie:null
   },
   //获取JSESSIONID,
 })
