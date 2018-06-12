@@ -19,7 +19,7 @@
       <rich-text nodes="{{NowData.content}}"></rich-text>
     </view>
     <view class='option'>
-      <view wx:for="{{NowData.options}}" wx:for-index="index" wx:for-item="item"><rich-text nodes="{{item}}"></rich-text> </view>
+      <view ><rich-text nodes="{{NowData.options}}"></rich-text> </view>
     </view>
   </scroll-view>
   <!--选项  -->
@@ -27,17 +27,18 @@
 </view>
 <view class='chooseBlock'>
   <view class='chooseOption' data-useranswer="A" bindtap='choose'>
-    <view class='{{NowData.userAnswer=="A"?"choosed":""}}'>A</view>
+    <view class='{{(NowData.userAnswer=="A"&&nowChoose=="")?"choosed":""}}{{nowChoose=="A"?"choosed":""}}'>A</view>
   </view>
   <view class='chooseOption' data-useranswer="B" bindtap='choose'>
-    <view class='{{NowData.userAnswer=="B"?"choosed":""}}'>B</view>
+    <view class='{{(NowData.userAnswer=="B"&&nowChoose=="")?"choosed":""}}{{nowChoose=="B"?"choosed":""}}'>B</view>
   </view>
+   
   <view class='chooseOption' data-useranswer="C" bindtap='choose'>
-    <view class='{{NowData.userAnswer=="C"?"choosed":""}}'>C</view>
+    <view class='{{(NowData.userAnswer=="C"&&nowChoose=="")?"choosed":""}}{{nowChoose=="C"?"choosed":""}}'>C</view>
   </view>
   <view class='chooseOption' data-useranswer="D" bindtap='choose'>
-    <view class='{{NowData.userAnswer=="D"?"choosed":""}}'>D</view>
-  </view>
+    <view class='{{(NowData.userAnswer=="D"&&nowChoose=="")?"choosed":""}}{{nowChoose=="D"?"choosed":""}}'>D</view>
+  </view><!-- -->
   <view class=''>
     <view class='{{NowData.userAnswer=="D"?"choosed":""}}'></view>
   </view>

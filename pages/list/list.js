@@ -31,7 +31,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    //////获取ID
+    
   },
 
   /**
@@ -69,7 +70,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      title: '生物合格考，邀请你一起模拟考',
+      path:"/pages/list/list"
+    }
   },
   goWork:function(e){
     if(getApp().globalData.userID==null){

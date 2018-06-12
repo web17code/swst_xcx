@@ -17,13 +17,19 @@
 }
 
 .headerBlock .prev {
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: #fff;
   text-shadow: 2rpx 2rpx 2rpx #999;
   height: 80rpx;
   line-height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-
+.headerBlock .prev image{
+  width:40rpx;
+  height:40rpx;
+}
 .headerBlock .next {
   font-size: 28rpx;
   color: #fff;
@@ -241,7 +247,7 @@
   color:#37d8d0;
 }
 .popupBody{
-  /* margin-bottom:30rpx; */
+  margin-bottom:30rpx;
 }
 .popupBlock .popup .popupItem.right{
   border:1px solid #37d8d0;
@@ -264,7 +270,7 @@
   justify-content: space-around;
   height: 104rpx;
   width:680rpx;
-  /* border-top:1px solid #ccc; */
+  border-top:1px solid #9d9f9f;
   margin: 0 auto;
 }
 .popupBlock .popup .rightLabel{

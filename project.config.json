@@ -45,6 +45,12 @@
 					"name": "图表",
 					"pathName": "pages/chart/chart",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享题目",
+					"pathName": "pages/shareTimu/shareTimu",
+					"query": "id=88"
 				}
 			]
 		}

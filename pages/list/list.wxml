@@ -45,7 +45,7 @@
 <view class='popupBlock' hidden='{{!isShowPopUp}}'>
   <view class='popup'>
     <view class='popupTitle'>温馨提示</view>
-    <view class='popupTxt'>更多生物习题请访问享学网，做题学解析查知识点诊断报告。</view>
+    <view class='popupTxt'>更多生物习题请访问享学课堂http://www.52xxkt.com，做题学解析查知识点诊断报告。</view>
     <view class='okBtn' bindtap='hidePopup'>已了解</view>
   </view>
 </view>

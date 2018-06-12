@@ -1,0 +1,29 @@
+<view class='answerPage'>
+  <!--头部、上一题、下一题、时间  -->
+  <view class='headerBlock'>
+    <view class='prev' bindtap='goList'><image src="../images/back.png"></image> 返回</view>
+  </view>
+  <!--题目信息区域  -->
+  <!-- <view>6、人体一旦缺乏维生素就容易患病，饮食中如果缺乏维生素C就可能得（）</view>
+   -->
+  <image src='../images/topBorder.png' class='topBorder'></image>
+  <scroll-view scroll-y="true" scroll-x="true" class='q-text'>
+    <view>
+      <rich-text nodes="{{NowData.content}}"></rich-text>
+    </view>
+    <view class='option'>
+      <view>
+        <rich-text nodes="{{NowData.options}}"></rich-text>
+      </view>
+    </view>
+    <view class="answer" hidden='{{!NowData.answer}}'>标准答案：{{NowData.answer}}</view>
+    <view class='analyse'>
+      <rich-text nodes="{{NowData.analyse}}"></rich-text>
+    </view>
+  </scroll-view>
+  <!--选项  -->
+
+</view>
+<!-- <view class='chooseBlock'>
+  <view bindtap='share' class="submitShare"><button open-type="share" >分享</button></view>
+</view> -->

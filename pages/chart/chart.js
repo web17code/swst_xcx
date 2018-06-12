@@ -114,6 +114,15 @@ Page({
     examId: null,
     userId: null
   },
+  /**
+ * 用户点击右上角分享
+ */
+  onShareAppMessage: function () {
+    return {
+      title: '生物合格考，邀请你一起模拟考',
+      path: "/pages/list/list"
+    }
+  },
   // 点击按钮后初始化图表
   init: function () {
     this.ecComponent.init((canvas, width, height) => {

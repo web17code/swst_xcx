@@ -85,11 +85,6 @@
   margin-top:10rpx;
 }
 
-
-
-
-
-
 .chooseBlock{
   width: 100%;
   color: #24AEC5;

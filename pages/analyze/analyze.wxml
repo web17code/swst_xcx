@@ -2,11 +2,10 @@
   <!--头部、上一题、下一题、时间  -->
   <view class='headerBlock'>
     <view class='prev' bindtap='prev'>上一题</view>
-    <!-- <view class='timeBlock'>
-      <image class='timeBg' src='../images/timebg.png'></image>
-      <view class='minute'>{{minute_s}}</view>
-      <view class='second'>{{second_s}}</view>
-    </view> -->
+    <view class='q-num' hidden='{{pageNum=="null"}}' bindtap='showPopup'>
+      {{pageNum}}/{{total}}
+      <image src="../images/more.png"></image>
+    </view>
     <view class='next' bindtap='next'>下一题</view>
   </view>
   <!--题目信息区域  -->
@@ -14,15 +13,18 @@
    -->
   <image src='../images/topBorder.png' class='topBorder'></image>
   <scroll-view scroll-y="true" scroll-x="true" class='q-text'>
-    <view class='q-num'  hidden='{{pageNum==null}}'>{{pageNum}}/{{total}}</view>
     <view>
-      <rich-text nodes="{{NowData.content}}" ></rich-text>
+      <rich-text nodes="{{NowData.content}}"></rich-text>
     </view>
     <view class='option'>
-      <view wx:for="{{NowData.options}}" wx:for-index="index" wx:for-item="item"><rich-text nodes="{{item}}"></rich-text> </view>
+      <view>
+        <rich-text nodes="{{NowData.options}}"></rich-text>
+      </view>
     </view>
     <view class="answer" hidden='{{!NowData.answer}}'>标准答案：{{NowData.answer}}</view>
-    <view class='analyse'><rich-text nodes="{{NowData.analyse}}"></rich-text></view>
+    <view class='analyse'>
+      <rich-text nodes="{{NowData.analyse}}"></rich-text>
+    </view>
   </scroll-view>
   <!--选项  -->
 
@@ -40,8 +42,31 @@
   <view class='chooseOption' data-useranswer="D" bindtap='choose'>
     <view class='{{NowData.userAnswer=="D"?"choosed":""}}  {{NowData.userAnswer==NowData.answer?"":"error"}}'>D</view>
   </view>
-  <view class=''>
-    <view class='{{NowData.userAnswer=="D"?"choosed":""}}'></view>
+  <view bindtap='share' class="submitShare"><button open-type="share" >分享</button></view>
+</view>
+<view class='popupBlock' hidden='{{!isShowPopUp}}'>
+  <view class='popup'>
+    <view class='popup-title'>
+      题目列表
+      <image class='closePic' src='../images/close.gif' bindtap='hidePopup'></image>
+    </view>
+    <scroll-view class='popupBody' scroll-y="true">
+      <view class='popupItems'>
+        <view wx:for="{{listNum}}" class='popupItem {{item.result==1?"error":""}} {{item.result==0?"right":""}}' bindtap='goTimu' data-num="{{item.number}}">
+          <!-- right -->
+          {{item.number}}
+          <image wx:if="{{item.result==1}}" src='../images/error.png'></image>
+          <image wx:if="{{item.result==0}}" src='../images/right.png'></image>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='popup-footer'>
+      <view class='rightLabel'>
+        <view></view>回答正确的题目</view>
+      <view class="errorLabel">
+        <view></view>回答错误的题目</view>
+      <view class='unDoLabel'>
+        <view></view>未作答的题目</view>
+    </view>
   </view>
-  <!-- <view class='submitSJ' bindtap='submitSJ_check'>交卷</view> -->
 </view>

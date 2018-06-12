@@ -3,7 +3,8 @@
     "pages/list/list",
     "pages/answer/answer",
     "pages/analyze/analyze",
-    "pages/chart/chart"
+    "pages/chart/chart",
+    "pages/shareTimu/shareTimu"
   ],
   "window": {
     "navigationBarBackgroundColor": "#00adaf",

@@ -15,6 +15,7 @@ Page({
     pageNum: null,//当前的题号（也就是当前页码）
     NowData: {},//当前题目的数据
     total: null,//总体数
+    nowChoose:"",//这道题用户选了哪一项
   },
 
   /**
@@ -73,7 +74,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '生物合格考，邀请你一起模拟考',
+      path: "/pages/list/list"
+    }
   },
   //启动定时器，进行计时
   startTimer: function () {
@@ -118,7 +122,8 @@ Page({
   showLoadingBlock: function () {
     wx.showToast({
       title: '加载中',
-      icon: 'loading'
+      icon: 'loading',
+      mask: true
     })
   },
   //隐藏加载层
@@ -152,8 +157,12 @@ Page({
     }
   },
   choose: function (e) {
+    console.log(e)
     var that = this;
     var userAnswer = e.currentTarget.dataset.useranswer
+    that.setData({
+      nowChoose: userAnswer
+    })
     wx.showLoading({
       title: '提交选项',
       mask: true
@@ -193,11 +202,11 @@ Page({
           } else {
             wx.hideLoading()
             //渲染选择的选项
-            var obj = that.data.NowData;
-            obj.userAnswer = userAnswer;
-            that.setData({
-              NowData: obj
-            })
+            // var obj = that.data.NowData;
+            // obj.userAnswer = userAnswer;
+            // that.setData({
+            //   NowData: obj
+            // })
             wx.showToast({
               title: '已是最后一题哦',
               icon: 'none',
@@ -229,20 +238,22 @@ Page({
         wx.hideLoading()
         console.log(res)
         if (res.data.code == "0000" && res.data.data.length == 1) {//结果没问题，更新一下试图
-          try {
-            res.data.data[0].options = JSON.parse(res.data.data[0].options);
-          } catch (e) {
-            res.data.data[0].options = [];
-            //提示题目异常，请下一题
-            wx.showToast({
-              title: '题目解析异常',
-              icon: 'none'
-            })
-          }
+          // try {
+          //   res.data.data[0].options = JSON.parse(res.data.data[0].options);
+          // } catch (e) {
+          //   res.data.data[0].options = [];
+          //   //提示题目异常，请下一题
+          //   wx.showToast({
+          //     title: '题目解析异常',
+          //     icon: 'none',
+          //     mask: true
+          //   })
+          // }
           that.setData({
             NowData: res.data.data[0],
             total: res.data.total,
-            pageNum: res.data.pageNum
+            pageNum: res.data.pageNum,
+            nowChoose:""//清空用户之前的选项
           })
           //启动秒表
           that.data.answerTime = res.data.data[0].usedTime;
